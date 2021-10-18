@@ -7,6 +7,6 @@ public class JsonBody {
 	public List <Body> body;
 
 	{
-		body = new ArrayList<Body>();
+		body = new ArrayList<>();
 	}
 }
