@@ -18,7 +18,7 @@ public class Itoken {
 
 	public static String getNumber(final TestInfo testInfo, final URL url) throws Exception {
 		AppiumDriver<MobileElement> driver = DriverFactory.getDriver(url);
-		WebElement botaoItoken = null;
+		WebElement botaoItoken;
 
 		String ITOKEN_VAREJO = "ITOKEN_VAREJO";
 		if (Objects.equals(ITOKEN_VAREJO, url.nome())) {
@@ -31,7 +31,7 @@ public class Itoken {
 
 		for (int i = 0; i < 20 && driver.findElements(By.xpath("//android.widget.TextView[@text='iToken']")).size() == 0; i++) {
 			Thread.sleep( 1000);
-			System.out.println(String.format("Aguardando existencia na tela do elemento %s - %d", "//android.widget.TextView[@text='iToken']", i));
+			System.out.printf("Aguardando existencia na tela do elemento %s - %d%n", "//android.widget.TextView[@text='iToken']", i);
 		}
 
 		String imageToken = Utils.getTokenImage(testInfo, driver);
